@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TL.Application.Common.Persistance;
 using TL.Core.Common;
-using TL.Infrastructure.Persistence.Contexts;
+using TL.Infrastructure.Persistance.Contexts;
 
 namespace TL.Infrastructure.Persistence.Repositories.Common
 {
-    public class AuthRepository<TEntity> : IRepository<TEntity> 
+    public class Repository<TEntity> : IRepository<TEntity>
         where TEntity : Entity
     {
-        protected readonly AuthDbContext _dbContext;
+        protected readonly TLDbContext _dbContext;
 
-        public AuthRepository(AuthDbContext dbContext)
+        public Repository(TLDbContext dbContext)
         {
             _dbContext = dbContext;
         }
