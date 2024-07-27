@@ -1,6 +1,6 @@
 ﻿namespace TL.Core.Enums.Authentication
 {
-    public enum ResourceType
+    public enum Resource
     {
         Application = 0,
         EmplInApp = 1,
