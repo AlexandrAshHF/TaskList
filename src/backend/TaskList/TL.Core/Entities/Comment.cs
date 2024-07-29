@@ -5,6 +5,9 @@ using TL.Core.ValueObjects;
 
 namespace TL.Core.Entities
 {
+    /// <summary>
+    /// Комментарий
+    /// </summary>
     public class Comment : AuditableEntity<int>
     {
         public virtual Employee Employee { get; set; }
