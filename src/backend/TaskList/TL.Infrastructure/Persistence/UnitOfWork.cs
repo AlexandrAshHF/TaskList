@@ -18,7 +18,7 @@ namespace TL.Infrastructure.Persistence
 
         public async Task CommitAsync(CancellationToken cancellationToken = default)
         {
-            AuditEntity();
+            await AuditEntity();
 
             try
             {
@@ -34,6 +34,11 @@ namespace TL.Infrastructure.Persistence
             var entries = _dbContext.ChangeTracker.Entries<IAuditableEntity>();
 
             var userId = await _userProvider.GetCurrentUserId();
+
+            foreach (var entity in entries)
+            {
+                //Добавить обновление полей
+            }
         }
     }
 }

@@ -8,6 +8,6 @@ namespace TL.Core.Entities.Authentication
 
         public virtual ICollection<User> Users { get; set; } = new List<User>();
 
-        public List<ResourcePermission> ResourcesPermissions { get; set; } = new List<ResourcePermission>();
+        public List<Permission> Permissions { get; set; } = new List<Permission>();
     }
 }

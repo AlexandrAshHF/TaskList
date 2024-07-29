@@ -1,6 +1,7 @@
 ﻿using TL.Core.Common;
 using TL.Core.Entities.Application;
 using TL.Core.Entities.Empl;
+using TL.Core.ValueObjects;
 
 namespace TL.Core.Entities
 {

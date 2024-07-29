@@ -1,8 +1,9 @@
 ﻿using TL.Core.Common;
 using TL.Core.Common.Exceptions;
+using TL.Core.Entities;
 using TL.Core.Entities.Application;
 
-namespace TL.Core.Entities
+namespace TL.Core.ValueObjects
 {
     public class Description : AuditableEntity<int>
     {
@@ -16,7 +17,7 @@ namespace TL.Core.Entities
         public virtual Comment Comment { get; set; }
         public int CommentId { get; set; }
 
-        public Description(string text) 
+        public Description(string text)
         {
             SetMarking(text);
         }

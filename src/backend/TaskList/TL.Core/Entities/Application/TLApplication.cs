@@ -1,5 +1,6 @@
 ﻿using TL.Core.Common;
 using TL.Core.Enums.Application;
+using TL.Core.ValueObjects;
 
 namespace TL.Core.Entities.Application
 {
@@ -24,7 +25,7 @@ namespace TL.Core.Entities.Application
         public virtual Description Description { get; set; }
         public int DescriptionId { get; set; }
 
-        public ApplicationStatus Status { get; set; }
+        public virtual ApplicationStatus Status { get; set; }
 
         /// <summary>
         /// Сотрудники
