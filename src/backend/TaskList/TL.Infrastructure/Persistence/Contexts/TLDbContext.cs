@@ -3,6 +3,8 @@ using TL.Core.Entities;
 using TL.Core.Entities.Application;
 using TL.Core.Entities.Authentication;
 using TL.Core.Entities.Empl;
+using TL.Core.ValueObjects;
+using TL.Core.ValueObjects.Authentication;
 
 namespace TL.Infrastructure.Persistance.Contexts
 {
@@ -18,11 +20,17 @@ namespace TL.Infrastructure.Persistance.Contexts
 
         public DbSet<EmployeeInApplication> EmployeesInApplications => Set<EmployeeInApplication>();
 
-        public DbSet<EmployeePosition> EmployeePositions => Set<EmployeePosition>();
-
         public DbSet<User> Users => Set<User>();
 
         public DbSet<Role> Roles => Set<Role>();
+
+        public DbSet<ApplicationStatus> ApplicationStatuses => Set<ApplicationStatus>();
+
+        public DbSet<Permission> Permissions => Set<Permission>();
+
+        public DbSet<Color> Colors => Set<Color>();
+
+        public DbSet<Description> Descriptions => Set<Description>();
 
         public TLDbContext(DbContextOptions options) : base(options)
         {

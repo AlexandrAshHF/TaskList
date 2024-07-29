@@ -1,5 +1,4 @@
 ﻿using TL.Core.Common;
-using TL.Core.Enums.Application;
 using TL.Core.ValueObjects;
 
 namespace TL.Core.Entities.Application
@@ -20,15 +19,28 @@ namespace TL.Core.Entities.Application
         public TimeSpan LaborCosts { get; set; }
 
         /// <summary>
-        /// HTML описание заявки
+        /// Пометка на удаление
+        /// </summary>
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Описание заявки
         /// </summary>
         public virtual Description Description { get; set; }
         public int DescriptionId { get; set; }
 
+        /// <summary>
+        /// Статус задачи
+        /// </summary>
         public virtual ApplicationStatus Status { get; set; }
 
         /// <summary>
-        /// Сотрудники
+        /// Проект, в котором находится задача
+        /// </summary>
+        public virtual Project Project { get; set; }
+
+        /// <summary>
+        /// Сотрудники, учавствющие в задаче
         /// </summary>
         public virtual ICollection<EmployeeInApplication> Employees { get; set; } = new List<EmployeeInApplication>();
     }
