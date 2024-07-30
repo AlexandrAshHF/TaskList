@@ -12,7 +12,7 @@ namespace TL.Infrastructure.Persistence
         {
             services.AddDbContext<TLDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseNpgsql(configuration.GetConnectionString("EpsmDbConnection"))
+                .UseNpgsql(configuration.GetConnectionString("TLDbConnection"))
             );
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();

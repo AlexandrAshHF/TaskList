@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.Entities.Empl;
 using TL.Core.Enums.Application;
 
@@ -7,7 +7,7 @@ namespace TL.Core.Entities.Application
     /// <summary>
     /// Отношение сотрудника в заявлении
     /// </summary>
-    public class EmployeeInApplication : Entity<int>
+    public class EmployeeInApplication : BaseEntity<int>
     {
         /// <summary>
         /// Сотрудник

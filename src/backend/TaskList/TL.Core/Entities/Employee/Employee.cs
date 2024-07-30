@@ -1,10 +1,9 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.Entities.Application;
-using TL.Core.Entities.Authentication;
 
 namespace TL.Core.Entities.Empl
 {
-    public class Employee : Entity<int>
+    public class Employee : BaseEntity<int>
     {
         /// <summary>
         /// ID аккаунта сотрудника
@@ -20,5 +19,10 @@ namespace TL.Core.Entities.Empl
         /// Отношения сотрудника в заявлениях
         /// </summary>
         public virtual ICollection<EmployeeInApplication> EmployeeInApplications { get; set; } = new List<EmployeeInApplication>();
+
+        /// <summary>
+        /// Комментарии, преимущественно к заявлениям
+        /// </summary>
+        public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

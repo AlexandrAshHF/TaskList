@@ -7,10 +7,11 @@ namespace TL.Api.Common
     [ApiController]
     public class BaseController : ControllerBase
     {
-        protected ISender _sender;
+        private ISender _mediator = null!;
+        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
+
         public BaseController()
         {
-            _sender = HttpContext.RequestServices.GetRequiredService<ISender>();
         }
     }
 }

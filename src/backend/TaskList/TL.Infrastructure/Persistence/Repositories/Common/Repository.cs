@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TL.Application.Common.Persistance;
-using TL.Core.Common;
+using TL.Core.Common.Entity;
 using TL.Infrastructure.Persistance.Contexts;
 
 namespace TL.Infrastructure.Persistence.Repositories.Common
 {
     public class Repository<TEntity> : IRepository<TEntity>
-        where TEntity : Entity
+        where TEntity : BaseEntity
     {
         protected readonly TLDbContext _dbContext;
 

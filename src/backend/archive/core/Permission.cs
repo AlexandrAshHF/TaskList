@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.Enums.Authentication;
 
 namespace TL.Core.ValueObjects.Authentication
@@ -6,7 +6,7 @@ namespace TL.Core.ValueObjects.Authentication
     /// <summary>
     /// Разрешение
     /// </summary>
-    public class Permission : Entity
+    public class Permission : BaseEntity
     {
         /// <summary>
         /// Действие

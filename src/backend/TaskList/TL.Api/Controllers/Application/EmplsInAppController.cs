@@ -11,8 +11,8 @@ namespace TL.Api.Controllers.Application
             return Ok();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetById()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
             return Ok();
         }
@@ -29,7 +29,7 @@ namespace TL.Api.Controllers.Application
             return Ok();
         }
 
-        [HttpGet]
+        [HttpDelete]
         public async Task<IActionResult> Delete()
         {
             return Ok();

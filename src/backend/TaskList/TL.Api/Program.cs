@@ -1,3 +1,7 @@
+using System.Reflection;
+using TL.Infrastructure;
+using TL.Infrastructure.Persistance.Contexts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddMediatR(opth =>
+{
+    opth.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+});
+
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

@@ -1,4 +1,4 @@
-﻿namespace TL.Core.Common
+﻿namespace TL.Core.Common.Entity
 {
     public interface IEntity
     {
