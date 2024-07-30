@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.ValueObjects;
 
 namespace TL.Core.Entities.Application
@@ -26,22 +26,28 @@ namespace TL.Core.Entities.Application
         /// <summary>
         /// Описание заявки
         /// </summary>
-        public virtual Description Description { get; set; }
-        public int DescriptionId { get; set; }
+        public Description Description { get; set; }
 
         /// <summary>
         /// Статус задачи
         /// </summary>
         public virtual ApplicationStatus Status { get; set; }
+        public int StatusId { get; set; }
 
         /// <summary>
         /// Проект, в котором находится задача
         /// </summary>
         public virtual Project Project { get; set; }
+        public int ProjectId { get; set; }
 
         /// <summary>
         /// Сотрудники, учавствющие в задаче
         /// </summary>
         public virtual ICollection<EmployeeInApplication> Employees { get; set; } = new List<EmployeeInApplication>();
+
+        /// <summary>
+        /// Комменатрии к задаче
+        /// </summary>
+        public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

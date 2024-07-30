@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 
 namespace TL.Core.Entities.Authentication
 {

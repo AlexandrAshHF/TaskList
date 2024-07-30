@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.Entities.Application;
 using TL.Core.Entities.Empl;
 using TL.Core.ValueObjects;
@@ -16,7 +16,7 @@ namespace TL.Core.Entities
         public virtual TLApplication Application { get; set; }
         public int ApplicationId { get; set; }
 
-        public virtual Description Description { get; set; }
-        public int DescriptionId { get; set; }
+        public Description Content { get; set; }
+        
     }
 }

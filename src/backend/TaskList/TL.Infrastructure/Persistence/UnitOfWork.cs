@@ -1,5 +1,5 @@
 ﻿using TL.Application.Common.Persistance;
-using TL.Core.Common;
+using TL.Core.Common.Entity;
 using TL.Infrastructure.Abstractions.Providers;
 using TL.Infrastructure.Persistance.Contexts;
 

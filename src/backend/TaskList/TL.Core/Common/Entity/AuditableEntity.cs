@@ -1,11 +1,11 @@
-﻿namespace TL.Core.Common
+﻿namespace TL.Core.Common.Entity
 {
     public abstract class AuditableEntity : AuditableEntity<Guid>
     {
 
     }
 
-    public abstract class AuditableEntity<TEntityId> : Entity<TEntityId>, IAuditableEntity
+    public abstract class AuditableEntity<TEntityId> : BaseEntity<TEntityId>, IAuditableEntity
     {
         public Guid CreatedBy { get; protected set; }
         public DateTime CreatedOn { get; protected set; }

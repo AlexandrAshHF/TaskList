@@ -3,7 +3,7 @@ using TL.Api.Common;
 
 namespace TL.Api.Controllers.Authentication
 {
-    public class UsersController : BaseController
+    public class RolesController : BaseController
     {
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -11,8 +11,8 @@ namespace TL.Api.Controllers.Authentication
             return Ok();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetById()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
             return Ok();
         }
@@ -29,7 +29,7 @@ namespace TL.Api.Controllers.Authentication
             return Ok();
         }
 
-        [HttpGet]
+        [HttpDelete]
         public async Task<IActionResult> Delete()
         {
             return Ok();

@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.Entities.Application;
 using TL.Core.Entities.Empl;
 

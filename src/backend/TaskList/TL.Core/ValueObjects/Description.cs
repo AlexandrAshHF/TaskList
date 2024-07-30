@@ -1,14 +1,13 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.Common.Exceptions;
-using TL.Core.Entities;
-using TL.Core.Entities.Application;
+using TL.Core.Common.ValueObject;
 
 namespace TL.Core.ValueObjects
 {
     /// <summary>
     /// Отформатированное описание
     /// </summary>
-    public class Description : AuditableEntity<int>
+    public class Description : BaseObject
     {
         /// <summary>
         /// Разметка
@@ -25,6 +24,9 @@ namespace TL.Core.ValueObjects
             SetMarking(text);
         }
 
+        public Description()
+        {
+        }
         public void SetMarking(string text)
         {
             if (string.IsNullOrEmpty(text))
@@ -38,6 +40,12 @@ namespace TL.Core.ValueObjects
         public void SetImages(string text)
         {
             // Добавить извлечение картинок из разметки
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Marking;
+            yield return Images;
         }
     }
 }

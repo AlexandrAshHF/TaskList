@@ -1,4 +1,4 @@
-﻿using TL.Core.Common;
+﻿using TL.Core.Common.Entity;
 using TL.Core.ValueObjects.Authentication;
 
 namespace TL.Core.Entities.Authentication
@@ -6,7 +6,7 @@ namespace TL.Core.Entities.Authentication
     /// <summary>
     /// Роль
     /// </summary>
-    public class Role : Entity<int>
+    public class Role : BaseEntity<int>
     {
         /// <summary>
         /// Название роли
