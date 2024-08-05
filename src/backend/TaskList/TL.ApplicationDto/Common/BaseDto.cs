@@ -1,6 +1,6 @@
 ﻿using Mapster;
 
-namespace TL.ApplicationDto.Common.Dto
+namespace TL.ApplicationDto.Common
 {
     public abstract class BaseDto<TDto, TEntity> : IRegister
         where TDto : class

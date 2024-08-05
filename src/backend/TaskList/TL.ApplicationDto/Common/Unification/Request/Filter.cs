@@ -1,8 +1,8 @@
 ﻿namespace TL.ApplicationDto.Common.Unification.Base
 {
-    public class Order
+    public class Filter
     {
         public string ParamName { get; set; }
-        public string Direction { get; set; }
+        public string Condition { get; set; }
     }
 }

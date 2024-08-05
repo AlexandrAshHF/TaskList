@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TL.Application", "TL.Application\TL.Application.csproj", "{EAF46B27-B976-4C65-86CE-34A1471914B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TL.ApplicationDto", "TL.ApplicationDto\TL.ApplicationDto.csproj", "{E81DC2C4-F847-4CFF-A009-E9D0168C2590}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5D5D57C-313C-480C-8015-D8B390F91445} = {A5D5D57C-313C-480C-8015-D8B390F91445}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TL.Core", "TL.Core\TL.Core.csproj", "{A5D5D57C-313C-480C-8015-D8B390F91445}"
 EndProject
