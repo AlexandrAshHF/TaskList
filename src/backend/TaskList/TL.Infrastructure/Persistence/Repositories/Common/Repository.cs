@@ -34,5 +34,10 @@ namespace TL.Infrastructure.Persistence.Repositories.Common
         {
             _dbContext.Set<TEntity>().Remove(entity);
         }
+
+        public IQueryable<TEntity> GetQuery()
+        {
+            return _dbContext.Set<TEntity>();
+        }
     }
 }

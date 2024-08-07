@@ -1,6 +1,6 @@
 ﻿namespace TL.Application.Common.Response
 {
-    public interface IResponseGenerator
+    public interface IPageGenerator
     {
     }
 }
