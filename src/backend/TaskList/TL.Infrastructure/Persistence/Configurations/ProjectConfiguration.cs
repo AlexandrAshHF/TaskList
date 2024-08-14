@@ -11,6 +11,7 @@ namespace TL.Infrastructure.Persistence.Configurations
             builder.HasOne(p => p.ParrentProject)
                 .WithMany(ip => ip.InternalProjects)
                 .HasForeignKey(p => p.ParrentProjectId)
+                .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

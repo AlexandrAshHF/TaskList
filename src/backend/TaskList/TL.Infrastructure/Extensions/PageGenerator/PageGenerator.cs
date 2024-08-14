@@ -5,18 +5,21 @@ using System.Linq.Expressions;
 using TL.ApplicationDto.Common;
 using TL.ApplicationDto.Common.Unification.Base;
 
-namespace TL.Application.Common.Response
+namespace TL.Infrastructure.Extensions.Pagination
 {
     public class PageGenerator : IPageGenerator
     {
-        public async Task<IEnumerable<TDto>> GeneratePage<TDto, TEntity>(IQueryable<TEntity> entities, QueryRequestDto request)
+        public async Task<IEnumerable<TDto>> GeneratePage<TDto, TEntity>(
+            IQueryable<TEntity> entities,
+            QueryRequestDto request, 
+            CancellationToken cancellationToken)
         {
             if (!entities.Any())
             {
                 return new List<TDto>();
             }
 
-            await ApplyFilters(entities, request.Filters);
+            ApplyFilters(entities, request.Filters);
 
             var dtos = await entities 
                 .Skip(request.Pagination != null 
@@ -31,10 +34,8 @@ namespace TL.Application.Common.Response
             return dtos;
         }
 
-        private Task ApplyFilters<TEntity>(IQueryable<TEntity> entities, IEnumerable<Filter> filters)
+        private void ApplyFilters<TEntity>(IQueryable<TEntity> entities, IEnumerable<Filter> filters)
         {
-            return new Task(() =>
-            {
                 foreach (var filter in filters)
                 {
                     var query = entities;
@@ -53,7 +54,7 @@ namespace TL.Application.Common.Response
 
                     entities = query.Where(lambda);
                 }
-            });
+            
         }
     }
 }

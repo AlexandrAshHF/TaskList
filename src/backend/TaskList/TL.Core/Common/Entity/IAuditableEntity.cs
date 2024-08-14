@@ -1,6 +1,6 @@
 ﻿namespace TL.Core.Common.Entity
 {
-    public interface IAuditableEntity
+    public interface IAuditableEntity : IEntity
     {
         public Guid CreatedBy { get; }
         public DateTime CreatedOn { get; }
