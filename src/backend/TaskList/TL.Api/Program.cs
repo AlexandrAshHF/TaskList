@@ -1,6 +1,6 @@
 using System.Reflection;
+using TL.Application;
 using TL.Infrastructure;
-using TL.Infrastructure.Persistance.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddMediatR(opth =>
-{
-    opth.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-});
-
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();

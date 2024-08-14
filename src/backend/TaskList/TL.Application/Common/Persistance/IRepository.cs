@@ -1,11 +1,12 @@
-﻿using TL.Core.Common.Entity;
+﻿using TL.ApplicationDto.Common;
+using TL.Core.Common.Entity;
 
 namespace TL.Application.Common.Persistance
 {
     public interface IRepository<TEntity>
-        where TEntity : BaseEntity
+        where TEntity : class
     {
-        Task<TEntity[]> GetAll(CancellationToken cancellationToken);
+        Task<IEnumerable<TDto>> GetAll<TDto>(QueryRequestDto request, CancellationToken cancellationToken);
         Task<TEntity> GetById<TId>(TId id, CancellationToken cancellationToken);
         void Create(TEntity entity);
         void Remove(TEntity entity);

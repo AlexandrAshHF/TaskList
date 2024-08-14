@@ -18,7 +18,7 @@ namespace TL.Infrastructure.Persistence
 
         public async Task CommitAsync(CancellationToken cancellationToken = default)
         {
-            await AuditEntity();
+            //await AuditEntity();
 
             try
             {

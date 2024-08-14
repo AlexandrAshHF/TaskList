@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TL.Api.Common;
+using TL.Application.Application.Commands.Create;
+using TL.Application.Application.Queries.GetApplications;
+using TL.ApplicationDto.Common;
 using TL.Infrastructure.Persistance.Contexts;
 
 namespace TL.Api.Controllers.Application
@@ -7,9 +10,10 @@ namespace TL.Api.Controllers.Application
     public class ApplicationsController : BaseController
     {
         [HttpGet]
-        public async Task<IActionResult> Get(TLDbContext context)
+        public async Task<IActionResult> Get([FromQuery]GetApplicationsQuery request)
         {
-            return Ok();
+            var response = await Mediator.Send(request);
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
@@ -19,9 +23,10 @@ namespace TL.Api.Controllers.Application
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(CreateApplicationCommand request)
         {
-            return Ok();
+            var response = await Mediator.Send(request);
+            return Ok(response);
         }
 
         [HttpPut]

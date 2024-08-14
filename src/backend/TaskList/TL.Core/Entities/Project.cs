@@ -23,7 +23,7 @@ namespace TL.Core.Entities
         /// Родительский проект
         /// </summary>
         public virtual Project? ParrentProject { get; set; }
-        public int ParrentProjectId { get; set; }
+        public int? ParrentProjectId { get; set; }
 
         /// <summary>
         /// Дочерние проекты

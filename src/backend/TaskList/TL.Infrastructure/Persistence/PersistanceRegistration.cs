@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TL.Application.Common.Persistance;
+using TL.Application.Common.Persistance.Repositories;
 using TL.Infrastructure.Persistance.Contexts;
+using TL.Infrastructure.Persistence.Repositories;
 
 namespace TL.Infrastructure.Persistence
 {
@@ -14,6 +16,9 @@ namespace TL.Infrastructure.Persistence
                 .UseLazyLoadingProxies()
                 .UseNpgsql(configuration.GetConnectionString("TLDbConnection"))
             );
+
+            services.AddScoped<IApplicationRepository, ApplicationRepository>();
+            services.AddScoped<IEmplInAppRepository, EmplInAppRepositoty>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TL.Infrastructure.Persistance.Contexts;
@@ -12,9 +13,11 @@ using TL.Infrastructure.Persistance.Contexts;
 namespace TL.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(TLDbContext))]
-    partial class TLDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240810100353_ChangedLinkProject")]
+    partial class ChangedLinkProject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

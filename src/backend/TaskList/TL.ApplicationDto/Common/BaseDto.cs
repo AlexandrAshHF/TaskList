@@ -4,7 +4,7 @@ namespace TL.ApplicationDto.Common
 {
     public abstract class BaseDto<TDto, TEntity> : IRegister
         where TDto : class
-    where TEntity : class, new()
+        where TEntity : class, new()
     {
         public TEntity ToEntity()
         {
